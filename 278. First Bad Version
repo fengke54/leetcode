@@ -1,0 +1,30 @@
+# The isBadVersion API is already defined for you.
+# @param version, an integer
+# @return an integer
+# def isBadVersion(version):
+
+class Solution:
+    def firstBadVersion(self, n):
+        """
+        :type n: int
+        :rtype: int
+        [1,2,3,4,5,6,7,8,9]
+        [0,0,0,0,0,1,1,1,1]
+        """
+        import math
+        lo,hi = 1,n
+        mid = int(lo+(hi-lo)/2)
+        
+        while hi-lo !=0:
+            if not isBadVersion(mid):
+                lo = mid+1 
+            if isBadVersion(mid):
+                hi = mid 
+            mid = int(lo+(hi-lo)/2)
+            
+        return mid
+    
+"""This is a very simple binary search question
+start off from the middle,if it is a bad version, return the mid. If not, continue search from the left, left + 1"""
+        
+			
