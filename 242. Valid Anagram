@@ -1,0 +1,9 @@
+from collections import Counter
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        # hashtable solutions
+        hash_s = dict(Counter(s))
+        hash_t = dict((Counter(t)))
+        return hash_s == hash_t
+    
+# dict(Counter(s)) do a count of each letter. 
