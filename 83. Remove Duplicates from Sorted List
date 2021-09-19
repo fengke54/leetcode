@@ -1,0 +1,11 @@
+class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        curr = head # head is the beginning of the LinkedList
+        
+        while(curr and curr.next): # while the list is not just one node 
+            if curr.next.val == curr.val:
+                curr.next = curr.next.next
+            else: 
+                curr = curr.next
+        return head
+            
